@@ -27,17 +27,16 @@
         methods: {
             
             startTypingEffect() {
-                console.log(this.texto.length);
-            let index = 0;
-            const typingElement = document.getElementById("text");
-            const timer = setInterval(() => {
-                if (index >= this.texto.length) {
-                clearInterval(timer);
-                return;
-                }
-                typingElement.textContent += this.texto.charAt(index);
-                index++;
-            }, 50);
+                let index = 0;
+                const typingElement = document.getElementById("text");
+                const timer = setInterval(() => {
+                    if (index >= this.texto.length) {
+                    clearInterval(timer);
+                    return;
+                    }
+                    typingElement.textContent += this.texto.charAt(index);
+                    index++;
+                }, 50);
             }
         }
 };
@@ -56,16 +55,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 
     .main{
-        margin-top: -1rem;
+        text-align: justify;
+        margin-top: -0.4rem;
         display: flex;
         position: relative;
         width: 100%;
-        padding: 2rem;
+        padding: 10rem;
         height: 60rem;
         display: flex;
     }
     .texto{
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: white;
         z-index: 100;
         font-family: 'Josefin Sans';
@@ -75,9 +75,10 @@
     }
     .img_main{
         top: 0;
+        left: 0;
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 150%;
+        max-height: 100%;
         filter: brightness(20%)
     }
 </style>

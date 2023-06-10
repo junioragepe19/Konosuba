@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 export default {
 
-    name: 'App',
+    name: 'Characters',
     setup() {
         var characterSelected = ref(null);
         const urlCharacters = [{url_code: "/src/assets/KazumaFull.png", name_char: "Satou Kazuma", age: "17", desc:
@@ -26,53 +26,59 @@ export default {
 </script>
 
 <template>
-    <h1 class="title">
-        <img class="anim_title" src="../assets/KonosubaGif.gif">
-        <div class="text_title">
-            <span class="first">Per</span>
-            <span class="second">so</span>
-            <span class="third">na</span>
-            <span class="first">gens</span>
-        </div>
-    </h1>
-    <div class="main-content">
-        <div class="character-selected-container">
-            
-            <img class="character-selected" :src="characterSelected !== null ? urlCharacters[characterSelected].url_code : ''">
-       
-        </div>
-        <div v-if="characterSelected != null" class="text-character">
-            <div class="text">
-                Nome: {{ urlCharacters[characterSelected].name_char }}
+    <div class="characters">
+        <h1 class="title">
+            <img class="anim_title" src="../assets/KonosubaGif.gif">
+            <div class="text_title">
+                <span class="first">Per</span>
+                <span class="second">so</span>
+                <span class="third">na</span>
+                <span class="first">gens</span>
+            </div>
+        </h1>
+        <div class="main-content">
+            <div class="character-selected-container">
                 
-            </div>
-            <div class="text">
-                Idade: {{ urlCharacters[characterSelected].age }} anos
-            </div>
-            <div class="text">
-                {{ urlCharacters[characterSelected].desc }}
-            </div>
-        </div>
-        <div class="list-characters">
-            <div class="character" @click="selectCharacter(0)">
-                <img :class="{'grayscale' : !verifyNumber(0)}" src="../assets/KazumaIcon.png">
-            </div>
-            <div class="character" @click="selectCharacter(1)" >
-                <img :class="{'grayscale' : !verifyNumber(1)}" src="../assets/MeguminIcon.png"> 
-            </div>
-            <div class="character" @click="selectCharacter(2)">
-                <img :class="{'grayscale' : !verifyNumber(2)}" src="../assets/DarknessIcon2.png">
-            </div>
-            <div class="character" @click="selectCharacter(3)">
-                <img :class="{'grayscale' : !verifyNumber(3)}" src="../assets/AquaIcon.png">
-            </div>
-        </div>
+                <img class="character-selected" :src="characterSelected !== null ? urlCharacters[characterSelected].url_code : ''">
         
+            </div>
+            <div v-if="characterSelected != null" class="text-character">
+                <div class="text">
+                    Nome: {{ urlCharacters[characterSelected].name_char }}
+                    
+                </div>
+                <div class="text">
+                    Idade: {{ urlCharacters[characterSelected].age }} anos
+                </div>
+                <div class="text">
+                    {{ urlCharacters[characterSelected].desc }}
+                </div>
+            </div>
+            <div class="list-characters">
+                <div class="character" @click="selectCharacter(0)">
+                    <img :class="{'grayscale' : !verifyNumber(0)}" src="../assets/KazumaIcon.png">
+                </div>
+                <div class="character" @click="selectCharacter(1)" >
+                    <img :class="{'grayscale' : !verifyNumber(1)}" src="../assets/MeguminIcon.png"> 
+                </div>
+                <div class="character" @click="selectCharacter(2)">
+                    <img :class="{'grayscale' : !verifyNumber(2)}" src="../assets/DarknessIcon2.png">
+                </div>
+                <div class="character" @click="selectCharacter(3)">
+                    <img :class="{'grayscale' : !verifyNumber(3)}" src="../assets/AquaIcon.png">
+                </div>
+            </div>
+            
+        </div>
     </div>
 </template>
 
 <style>
     @import '../app.scss';
+
+    .characters{
+        position: relative;
+    }
     .text_title{
         margin-top: 12rem;
         z-index: 10;
@@ -91,7 +97,7 @@ export default {
         font-family: 'Konosuba';
         position: absolute;
         top:10rem;
-        right: 2rem;
+        right: 11rem;
         width: 35%;
         height: 50%;
         background-image: url("../assets/backgroundText.png");

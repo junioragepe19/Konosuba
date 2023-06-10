@@ -13,6 +13,7 @@
     "pinia": "^2.0.36",
     "vue": "^3.3.2",
     "vue-router": "^4.2.0",
+    "vue-scrollto": "^2.20.0",
     "vue-youtube-embed": "^2.2.2",
     "vuetify": "^3.3.3"
   },

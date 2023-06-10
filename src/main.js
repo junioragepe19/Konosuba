@@ -7,13 +7,14 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import VueScrollTo from 'vue-scrollto';
 
 const app = createApp(App)
 const vuetify = createVuetify({
     components,
     directives,
   })
-
+app.use(VueScrollTo);
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)
