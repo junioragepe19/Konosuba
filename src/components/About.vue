@@ -56,6 +56,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 
     .main{
+        margin-top: -1rem;
         display: flex;
         position: relative;
         width: 100%;

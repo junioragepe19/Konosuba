@@ -27,10 +27,14 @@ export default {
 
 <template>
     <h1 class="title">
-        <span class="first">Per</span>
-        <span class="second">so</span>
-        <span class="third">na</span>
-        <span class="first">gens</span></h1>
+        <img class="anim_title" src="../assets/KonosubaGif.gif">
+        <div class="text_title">
+            <span class="first">Per</span>
+            <span class="second">so</span>
+            <span class="third">na</span>
+            <span class="first">gens</span>
+        </div>
+    </h1>
     <div class="main-content">
         <div class="character-selected-container">
             
@@ -69,6 +73,14 @@ export default {
 
 <style>
     @import '../app.scss';
+    .text_title{
+        margin-top: 12rem;
+        z-index: 10;
+    }
+    .anim_title{
+        position: absolute;
+        width: 80%;
+    }
     .text{
         color: #4c3728;
         margin-left: 2rem;
@@ -98,11 +110,16 @@ export default {
         filter: grayscale(0) !important;
     }
     .title{
-        text-align: center;
+        position: relative;
+        width: 100%;
+        height: 7rem;
+        display: flex;
+        justify-content: center;
         font-family: 'Konosuba';
-        font-size: 4rem;
+        font-size: 6rem;
     }
     .main-content{
+        margin-top: 14rem;
         position: relative;
         width: 100%;
         height: 50rem;

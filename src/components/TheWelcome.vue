@@ -15,7 +15,9 @@
 
 
 <style>
-
+.video{
+  height: 100%;
+}
 .home{
   display: flex;
   align-items: center;
