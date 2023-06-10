@@ -57,7 +57,7 @@ export default {
                 <img :class="{'grayscale' : !verifyNumber(1)}" src="../assets/MeguminIcon.png"> 
             </div>
             <div class="character" @click="selectCharacter(2)">
-                <img :class="{'grayscale' : !verifyNumber(2)}" src="../assets/DarknessIcon.png">
+                <img :class="{'grayscale' : !verifyNumber(2)}" src="../assets/DarknessIcon2.png">
             </div>
             <div class="character" @click="selectCharacter(3)">
                 <img :class="{'grayscale' : !verifyNumber(3)}" src="../assets/AquaIcon.png">
@@ -105,7 +105,7 @@ export default {
     .main-content{
         position: relative;
         width: 100%;
-        height: 60rem;
+        height: 50rem;
         background-image: url("../assets/backgroundCharacters.png");
         justify-content:center;
         display: flex;
