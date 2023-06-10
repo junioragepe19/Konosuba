@@ -8,13 +8,12 @@
 
 <style>
 .main{
+    position: relative;
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 13rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    gap: 4;
     flex-direction: column;
 }
 .circle{

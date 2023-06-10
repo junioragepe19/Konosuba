@@ -26,7 +26,11 @@ export default {
 </script>
 
 <template>
-    <h1 class="title">Personagens</h1>
+    <h1 class="title">
+        <span class="first">Per</span>
+        <span class="second">so</span>
+        <span class="third">na</span>
+        <span class="first">gens</span></h1>
     <div class="main-content">
         <div class="character-selected-container">
             
@@ -66,6 +70,7 @@ export default {
 <style>
     @import '../app.scss';
     .text{
+        color: #4c3728;
         margin-left: 2rem;
         margin-top: 2rem;
         margin-right: 2rem;
@@ -99,9 +104,8 @@ export default {
     }
     .main-content{
         position: relative;
-        margin-top: 1rem;
         width: 100%;
-        height: 50rem;
+        height: 60rem;
         background-image: url("../assets/backgroundCharacters.png");
         justify-content:center;
         display: flex;
@@ -118,7 +122,8 @@ export default {
     }
     .character-selected{
         position: relative;
-        width: 95%;
+        padding-top: 2rem;
+        width: 86%;
     }
     .list-characters{
         z-index: 100;
@@ -126,18 +131,32 @@ export default {
         bottom: 0;
         display: flex;
         flex-direction: row;
+        
     }
     .character{
         cursor: pointer;
         display: flex;
+        position: relative;
         width: 12rem;
         height: 12rem;
+        border-color: darkgoldenrod !important;
+        border-width: 2px !important;
+        border-style: solid;
         background-color: #1E1D21;
-        border-color: darkgoldenrod;
-        border-width: 2px;
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         transition: ease-in-out 0.1s;
     }
-    .character:hover{
+    .character img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .first{
+        color: #FF00A2;
+    }
+    .second{
+        color: #FFC948;
+    }
+    .third{
+        color: #901503;
     }
 </style>
