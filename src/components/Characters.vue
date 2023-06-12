@@ -8,10 +8,23 @@ export default {
         const urlCharacters = [{url_code: "/src/assets/KazumaFull.png", name_char: "Satou Kazuma", age: "17", desc:
         "Ele é conhecido por sua personalidade preguiçosa, egocêntrica e até mesmo trapaceira, mas também tem um bom coração. Apesar de inicialmente se ressentir de ser enviado para outro mundo,\
         ele logo se adapta à situação e decide se tornar um aventureiro para ganhar dinheiro e sobreviver."},
-        {url_code: "/src/assets/MeguminFull.png", name_char: "Megumin", age: "14"},
-        {url_code: "/src/assets/DarknessFull.png", name_char: 'Dustiness Ford Lalatina "Darkness"', age: "19"},
-        {url_code: "/src/assets/AquaFull.png", name_char: 'Aqua', age: "∞"}]
+        {url_code: "/src/assets/MeguminFull.png", name_char: "Megumin", age: "14",desc:
+        "Apesar de sua fixação por explosões, Megumin é uma personagem carismática e adorável. Ela é leal aos seus amigos e está sempre pronta para protegê-los, mesmo que isso signifique usar toda\
+        a sua energia em um único ataque explosivo. Sua paixão pela magia explosiva é uma característica marcante e uma das principais fontes de comédia na série. Megumin também tem um relacionamento\
+        próximo com Yunyun, outra maga especializada em magia explosiva. As duas têm uma rivalidade amigável e frequentemente competem entre si."},
+        {url_code: "/src/assets/DarknessFull.png", name_char: 'Dustiness Ford Lalatina "Darkness"', age: "19", desc:
+        "Darkness é uma guerreira nobre e uma masoquista auto-proclamada. Ela é uma personagem extremamente peculiar, pois é obcecada por ser dominada e receber punições físicas durante as batalhas.\
+        Ela anseia por combates intensos e situações de perigo, buscando a sensação de dor e submissão. Apesar de suas inclinações masoquistas, Darkness é uma personagem leal e dedicada aos seus amigos.\
+        Ela está disposta a arriscar sua própria vida para protegê-los e é conhecida por sua forte determinação em batalha."},
+        {url_code: "/src/assets/AquaFull.png", name_char: 'Aqua', age: "∞", desc:
+        "A personalidade de Aqua é bastante infantil e imatura. Ela muitas vezes age de forma egoísta e irresponsável, causando problemas para os outros personagens. Ela também é propensa a entrar em discussões bobas e ser facilmente provocada por insultos.\
+        Apesar de suas falhas, Aqua é um membro valioso do grupo principal de protagonistas, que inclui Kazuma, Megumin e Darkness. Eles formam um time disfuncional, mas divertido, em suas aventuras no Mundo de KonoSuba. Aqua traz um elemento cômico para a história\
+        com suas trapalhadas e sua interação com os outros personagens."}]
 
+        function resetScroll(){
+            var elementToScroll = document.getElementById("scroll")
+            elementToScroll.scrollTo(0,0)
+        }
         function selectCharacter(index){
             characterSelected.value = index;
         }
@@ -19,7 +32,7 @@ export default {
             return characterSelected.value == num
         }
         return {
-            urlCharacters, characterSelected, selectCharacter, verifyNumber
+            urlCharacters, characterSelected, selectCharacter, verifyNumber, resetScroll
         };
     }
 }
@@ -42,7 +55,7 @@ export default {
                 <img class="character-selected" :src="characterSelected !== null ? urlCharacters[characterSelected].url_code : ''">
         
             </div>
-            <div v-if="characterSelected != null" class="text-character">
+            <div v-if="characterSelected != null" id="scroll" class="text-character">
                 <div class="text">
                     Nome: {{ urlCharacters[characterSelected].name_char }}
                     
@@ -55,16 +68,16 @@ export default {
                 </div>
             </div>
             <div class="list-characters">
-                <div class="character" @click="selectCharacter(0)">
+                <div class="character" @click="selectCharacter(0);resetScroll()">
                     <img :class="{'grayscale' : !verifyNumber(0)}" src="../assets/KazumaIcon.png">
                 </div>
-                <div class="character" @click="selectCharacter(1)" >
+                <div class="character" @click="selectCharacter(1);resetScroll()" >
                     <img :class="{'grayscale' : !verifyNumber(1)}" src="../assets/MeguminIcon.png"> 
                 </div>
-                <div class="character" @click="selectCharacter(2)">
+                <div class="character" @click="selectCharacter(2);resetScroll()">
                     <img :class="{'grayscale' : !verifyNumber(2)}" src="../assets/DarknessIcon2.png">
                 </div>
-                <div class="character" @click="selectCharacter(3)">
+                <div class="character" @click="selectCharacter(3);resetScroll()">
                     <img :class="{'grayscale' : !verifyNumber(3)}" src="../assets/AquaIcon.png">
                 </div>
             </div>
@@ -93,7 +106,12 @@ export default {
         margin-top: 2rem;
         margin-right: 2rem;
     }
+    .text-character::-webkit-scrollbar{
+        width: 0;
+    }
     .text-character{
+        scrollbar-width: 0;
+        overflow: scroll;
         font-family: 'Konosuba';
         position: absolute;
         top:10rem;
